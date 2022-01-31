@@ -4,28 +4,17 @@ import { useState } from "react";
 import axios from "axios";
 import MessageBox from "../components/MessagBox";
 import LoadingBox from "../components/LoadingBox";
+import { useSelector } from "react-redux";
+import { listProducts } from "../actions/productActions";
+import { useDispatch } from "react-redux";
 function HomeScreen() {
-  const [productsState, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const productlist = useSelector((state) => state.productList);
+  const { loading, error, products } = productlist;
+  const dispatch = useDispatch();
   //since by default am not loading anything
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const dataBack = await axios.get("/api/products");
-        console.log("Current Data From BackEND", dataBack.data.products);
-        setProducts(dataBack.data.products);
-        setLoading(false);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+    dispatch(listProducts());
   }, []);
-  console.log("Current State is", productsState);
   // let's build something to be shown to the user that
   // the website is loading
   return (
@@ -36,7 +25,7 @@ function HomeScreen() {
         <MessageBox varient="danger">{error}</MessageBox>
       ) : (
         <div className="row center">
-          {productsState.map((product) => {
+          {products.map((product) => {
             return <ProductC key={product._id} product={product}></ProductC>;
           })}
         </div>

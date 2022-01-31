@@ -4,6 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { compose, createStore } from "redux";
 import { applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { combineReducers } from "redux";
+import { productListReducer } from "./reducers/productReducers";
 const initialState = {};
 // const dataReducer = createSlice({
 //   name: "datareducers",
@@ -14,9 +16,7 @@ const initialState = {};
 //     },
 //   },
 // });
-const reducer = (state, action) => {
-  return { product: data.products };
-};
+const reducer = combineReducers({ productList: productListReducer });
 // const store = configureStore({
 //   reducer: dataReducer,
 //   middleware: (getDefaultMiddleware) =>
