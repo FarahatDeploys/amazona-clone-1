@@ -5,7 +5,10 @@ import { compose, createStore } from "redux";
 import { applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { combineReducers } from "redux";
-import { productListReducer } from "./reducers/productReducers";
+import {
+  productDetailsReducer,
+  productListReducer,
+} from "./reducers/productReducers";
 const initialState = {};
 // const dataReducer = createSlice({
 //   name: "datareducers",
@@ -16,7 +19,10 @@ const initialState = {};
 //     },
 //   },
 // });
-const reducer = combineReducers({ productList: productListReducer });
+const reducer = combineReducers({
+  productList: productListReducer,
+  prodcutDetails: productDetailsReducer,
+});
 // const store = configureStore({
 //   reducer: dataReducer,
 //   middleware: (getDefaultMiddleware) =>
