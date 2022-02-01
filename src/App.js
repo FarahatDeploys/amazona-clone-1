@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartScreen from "./screens/CartScreen";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 
@@ -24,6 +25,10 @@ function App() {
             <Route
               path="/product/:id"
               element={<ProductScreen></ProductScreen>}
+            ></Route>
+            <Route
+              path={"/cart/:id" || "cart"}
+              element={<CartScreen></CartScreen>}
             ></Route>
           </Routes>
         </main>

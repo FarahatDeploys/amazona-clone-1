@@ -141,18 +141,25 @@ li {
 .error {
   color: red;
 }
+inpu,
+select,
+textarea,
 button {
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem;
   font-size: 1.6rem;
+}
+button {
   font-family: Helvetica, Arial, sans-serif;
   cursor: pointer;
 }
 button.primary {
   background-color: #f0c040;
 }
-button:hover {
+input:hover,
+select:hover,
+textarea:hover button:hover {
   border: 0.1rem #404040 solid;
 }
 button.block {
