@@ -9,7 +9,14 @@ import {
   productDetailsReducer,
   productListReducer,
 } from "./reducers/productReducers";
-const initialState = {};
+import { cartReducer } from "./reducers/cartReducer";
+const initialState = {
+  cart: {
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : [],
+  },
+};
 // const dataReducer = createSlice({
 //   name: "datareducers",
 //   initialState,
@@ -22,6 +29,7 @@ const initialState = {};
 const reducer = combineReducers({
   productList: productListReducer,
   prodcutDetails: productDetailsReducer,
+  cart: cartReducer,
 });
 // const store = configureStore({
 //   reducer: dataReducer,
