@@ -36,9 +36,10 @@ function App() {
               element={<ProductScreen></ProductScreen>}
             ></Route>
             <Route
-              path={"/cart/:id" || "cart"}
+              path={"/cart/:id"}
               element={<CartScreen></CartScreen>}
             ></Route>
+            <Route path={"/cart/"} element={<CartScreen></CartScreen>}></Route>
           </Routes>
         </main>
         <footer className="row center">All right reserved</footer>

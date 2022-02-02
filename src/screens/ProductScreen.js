@@ -15,7 +15,6 @@ function ProductScreen() {
   const { loading, error, product } = productDetails;
   const { id } = useParams();
   const history = useNavigate();
-
   const [qty, setQty] = useState(1);
   console.log(productDetails);
 
