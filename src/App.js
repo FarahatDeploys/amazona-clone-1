@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SigninScreen from "./screens/SigninScreen";
 import { signOut } from "./actions/userActions";
+import RegisterScreen from "./screens/RegisterScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -63,6 +64,10 @@ function App() {
             <Route
               path="/signin"
               element={<SigninScreen></SigninScreen>}
+            ></Route>
+            <Route
+              path="/register"
+              element={<RegisterScreen></RegisterScreen>}
             ></Route>
             <Route path={"/cart/"} element={<CartScreen></CartScreen>}></Route>
           </Routes>
