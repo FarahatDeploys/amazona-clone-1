@@ -230,3 +230,17 @@ button.block {
   color: #a02020;
   background-color: #e0e0ff;
 }
+
+/* checkout-Steps */
+
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #ff8000;
+  color: #ff8000;
+}
