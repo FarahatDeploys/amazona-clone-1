@@ -39,7 +39,7 @@ function RegisterScreen() {
           {error && <MessagBox>{error}</MessagBox>}
         </div>
         <div>
-          <label htmlFor="email">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -87,8 +87,7 @@ function RegisterScreen() {
         <div>
           <label />
           <div>
-            Already have an account ?{" "}
-            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+            Already have an account ? <Link to={"/signin"}>Sign-In</Link>
           </div>
         </div>
       </form>

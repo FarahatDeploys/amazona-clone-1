@@ -1,6 +1,3 @@
-import data from "./data";
-import { configureStore } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit";
 import { compose, createStore } from "redux";
 import { applyMiddleware } from "redux";
 import thunk from "redux-thunk";

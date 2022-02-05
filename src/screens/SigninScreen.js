@@ -60,8 +60,7 @@ function SigninScreen() {
         <div>
           <label />
           <div>
-            New Customer ?
-            <Link to={`/signin?redirect=${redirect}`}>Create your account</Link>
+            New Customer ?<Link to={`/register`}>Create your account</Link>
           </div>
         </div>
       </form>
