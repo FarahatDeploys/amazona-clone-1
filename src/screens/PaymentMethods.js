@@ -15,11 +15,10 @@ function PaymentMethodsScreen() {
     }
   });
   const submitHandler = (e) => {
-    e.prevenetDefault();
-    dispatch(savePaymentMethod(PaymentMethod));
+    dispatch(savePaymentMethod(paymentMethod));
     navigate("/placeorder");
   };
-  const [PaymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("PayPal");
   return (
     <div>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
